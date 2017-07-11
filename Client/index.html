@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOVIES APP</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="css/site.css" media="screen">
+  <link rel="stylesheet" href="css/site.fonts.css" media="screen">
+  <link rel="stylesheet" href="css/site.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/searchform/searchform.css" media="screen">
+  <link rel="stylesheet" href="css/components/searchform/searchform.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/grid/grid.css" media="screen">
+  <link rel="stylesheet" href="css/components/grid/grid.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/card/card.css" media="screen">
+  <link rel="stylesheet" href="css/components/card/card2.css" media="screen">
+  <link rel="stylesheet" href="css/components/card/effects/card.focus.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/button/button.css" media="screen">
+  <link rel="stylesheet" href="css/components/button/button.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/popup/popup.css" media="screen">
+  <link rel="stylesheet" href="css/components/popup/popup.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/inputrange/inputrange.css" media="screen">
+  <link rel="stylesheet" href="css/components/inputrange/inputrange.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/check/check.css" media="screen">
+  <link rel="stylesheet" href="css/components/check/check.theme.css" media="screen">
+
+  <link rel="stylesheet" href="css/components/star/star.css" media="screen">
+  <link rel="stylesheet" href="css/components/loader/loader.css" media="screen">
+  <link rel="stylesheet" href="css/components/animations/animations.css" media="screen">
+
+  <script type="text/javascript" src="js/globals.js"></script>
+  <script type="text/javascript" src="js/modules/_MOVIEAPP.js"></script>
+  <script type="text/javascript" src="js/modules/siteConfig.js"></script>
+  <script type="text/javascript" src="js/modules/helpers.js"></script>
+  <script type="text/javascript" src="js/modules/uihelpers.js"></script>
+  <script type="text/javascript" src="js/modules/cacheService.js"></script>
+  <script type="text/javascript" src="js/utils/observer.js"></script>
+  <script type="text/javascript" src="js/modules/movieApiService.js"></script>
+  <script type="text/javascript" src="js/libs/lz-string.js"></script>
+  <script type="text/javascript" src="js/libs/jsonpack.js"></script>
+  <script type="text/javascript" src="js/templates/card.tmpl.js"></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <div id="headergrid" class="grid-equalHeight">
+        <div class="col-3">
+          <div class="logotext"><img class="logo .pure-img" src="images/logo.png" /> </div>
+        </div>
+        <div class="col-6">
+          <form id="searchForm">
+            <fieldset>
+              <label>Search for a movie...</label>
+              <div class="search-container">
+                <input type="text" id="search-input" placeholder="movie name" list="movies-datalist">
+                <button disabled="disabled">
+                    <img src="/images/icons/search.svg" alt="Search">
+                  </button>
+                <datalist id="movies-datalist">
+                </datalist>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-3">
+          <a class="button" id="buttonSettings" href="#settings" alt="Settings" title="Settings"><img src="/images/icons/cog.svg" /></a>
+          <button id="btnGetRecommendations" class="myButton btnPrimary" disabled="disabled">
+               <span>Get</span>
+          </button>
+
+        </div>
+      </div> <!-- #headergrid -->
+
+    </header>
+
+    <main>
+
+      <article>
+        <section>
+          <div id="containerGrid" class="grid-12-spaceBetween">
+            <div class="col-6-top-first table-title ">
+              <div class="twinkling"></div>
+              <div class="clouds"></div>
+              <h3 class="zoomIn caption-title">My Movies</h3>
+            </div>
+            <div class="col-6-top table-title">
+              <h3 class="zoomIn caption-title"> Recommended Movies</h3>
+            </div>
+
+            <div class="col-6-top">
+              <div id="myMovies" class="grid-3">
+
+              </div>
+            </div>
+            <div class="col-6-top-last">
+              <div id="spinloader" class="loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div id="myRecommendations" class="grid-3">
+
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+      </article>
+
+    </main>
+    <div id="log"></div>
+
+  </div>  <!--  <div class="wrapper">  -->
+ 
+
+  <!-- welcome popup -->
+
+  <div id="welcome" class="overlay">
+    <div class="popup">
+
+      <h2>Welcome</h2>
+      <a class="close" href="#"></a>
+      <div class="content">
+        <h3>MOVIE APP</h3>
+        <p>This application allow you to discover new movies based on your rating on movies you like (or dislike)!</p>
+        <p>Start by typing the title of your favorites movies to add them to MY MOVIES section.</p>
+        <p>Then rate at least (3) movies and press the GO button.</p>
+        <p>That's it. Your recommendation will appear to the MY RECOMMENDATIONS section.</p>
+        <p>&nbsp;</p>
+        <p>Happy rating!</p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- end popup -->
+
+  <!-- settings popup -->
+
+  <div id="settings" class="overlay">
+    <div class="popup">
+
+      <h2>Settings</h2>
+      <a class="close" href="#"></a>
+      <div class="content">
+
+        <div id="settings_grid" class="grid">
+
+          <div class="col-4">
+            <section title="toggle logging">
+              <div class="slideCheck">
+                <input type="checkbox" value="None" id="chkLogging" />
+                <label for="chkLogging">&nbsp;log&nbsp;</label>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-4">
+            <section title="toggle caching">
+              <div class="slideCheck">
+                <input type="checkbox" value="None" id="chkCaching" checked />
+                <label for="chkCaching">cache</label>
+              </div>
+            </section>
+          </div>
+          <div class="col-4">
+            <section title="toggle compression">
+              <div class="slideCheck">
+                <input type="checkbox" value="None" id="chkCompression" checked />
+                <label for="chkCompression">zip</label>
+              </div>
+            </section>
+          </div>
+
+          <!-- Second row -->
+          <div class="col-4">
+            <p>localStorage (<label id="label_StorageFreeSpace" for="btn_StorageFreeSpace"></label> Free)</p>
+          </div>
+          <div class="col-4">
+            <div id="settings_StorageFreeSapce">
+              <button id="btn_StorageFreeSpace" class="myButton btnSettings" title="Recalculate Free localStorage space">Recalculate</button>
+            </div>
+
+          </div>
+          <div class="col-4">
+            <div id="settings_StorageClear">
+              <button id="btn_StorageClear" class="myButton btnSettings" title="Clear localStorage">Clear</button>
+            </div>
+          </div>
+
+          <!-- Third row -->
+          <div class="col-4">
+            <p>Required Number of Rated Movies</p>
+          </div>
+          <div class="col-8">
+            <section class="range">
+              <div>
+                <label id="label_range_min_movies_for_recommendation" for="range_min_movies_for_recommendation">0</label>
+                <input type="range" value="0" id="range_min_movies_for_recommendation" min="2" max="8" />
+              </div>
+            </section>
+          </div>
+
+          <!-- Fourth row -->
+          <div class="col-4">
+            <p>Number of Autocomplete Suggestions</p>
+          </div>
+          <div class="col-8">
+            <section class="range">
+              <div>
+                <label id="label_range_max_autocomplete_suggestions" for="range_max_autocomplete_suggestions">0</label>
+                <input type="range" value="0" id="range_max_autocomplete_suggestions" min="2" max="20" />
+              </div>
+            </section>
+          </div>
+
+        </div>
+        <!-- end setting grid -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- end popup -->
+
+  <script type="text/javascript" src="js/site.js"></script>
+</body>
+
+</html>

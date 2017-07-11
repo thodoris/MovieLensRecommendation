@@ -1,0 +1,24 @@
+'use strict';
+
+var _templateObject = _taggedTemplateLiteral(['\n <div class="col" id="user_movie_', '">\n  <div class="card2-container">\n <div class="card2" data-movieid="', '">\n\t\t\t\t<img src="', '" alt="', '" />\n\t\t\t\t<div class="movieinfo">\n         <a href="#" title="Remove" class="close close2 ratingvisible', '" data-movieid="', '"></a>\n           <div class="rating ratingvisible', '">\n                      ', '\n            </div>\n\t\t\t\t\t<h3>', '</h3>\n           <p>', ' </p>\n           ', '\n\t\t\t\t</div>\n\t\t\t</div>\n      </div>\n       </div>'], ['\n <div class="col" id="user_movie_', '">\n  <div class="card2-container">\n <div class="card2" data-movieid="', '">\n\t\t\t\t<img src="', '" alt="', '" />\n\t\t\t\t<div class="movieinfo">\n         <a href="#" title="Remove" class="close close2 ratingvisible', '" data-movieid="', '"></a>\n           <div class="rating ratingvisible', '">\n                      ', '\n            </div>\n\t\t\t\t\t<h3>', '</h3>\n           <p>', ' </p>\n           ', '\n\t\t\t\t</div>\n\t\t\t</div>\n      </div>\n       </div>']),
+    _templateObject2 = _taggedTemplateLiteral(['\n       <div class="col" id="user_movie_', '">\n       <div class="card-container">\n            <div class="card" data-movieid="', '">\n            ', ' \n            <a href="#" title="Remove" class="close ratingvisible', '" data-movieid="', '"></a>\n            <span class="card-title">\n                      <div class="rating ratingvisible', '">\n                      ', '\n                      </div>\n                <h3>', '</h3><span> ', '</span>\n            </span>\n            </span>\n            <span class="card-summary">\n                   ', ' \n            </span>\n            <span class="card-meta">\n             ', '\n            </span>\n            </div>\n            </div>\n          </div>\n          '], ['\n       <div class="col" id="user_movie_', '">\n       <div class="card-container">\n            <div class="card" data-movieid="', '">\n            ', ' \n            <a href="#" title="Remove" class="close ratingvisible', '" data-movieid="', '"></a>\n            <span class="card-title">\n                      <div class="rating ratingvisible', '">\n                      ', '\n                      </div>\n                <h3>', '</h3><span> ', '</span>\n            </span>\n            </span>\n            <span class="card-summary">\n                   ', ' \n            </span>\n            <span class="card-meta">\n             ', '\n            </span>\n            </div>\n            </div>\n          </div>\n          ']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var addedMovie2 = function addedMovie2(_ref) {
+  var movie = _ref.movie,
+      fullRender = _ref.fullRender,
+      allowRating = _ref.allowRating;
+  return MOVIEAPP.uihelpers.template(_templateObject, movie.movieId, movie.movieId, movie.poster, movie.title, allowRating, movie.movieId, allowRating, [5, 4, 3, 2, 1].map(function (x) {
+    return '<input type="radio" name="user_movie_' + movie.movieId + '_rating" id="user_movie_' + movie.movieId + '_rating_r' + x + '" value="' + x + '" data-movieid="' + movie.movieId + '" onclick="event.stopPropagation();" ><label for="user_movie_' + movie.movieId + '_rating_r' + x + '"></label>';
+  }).join('\n      '), movie.title, fullRender ? '' + movie.plot : 'Plot not available', fullRender ? '<a href="http://www.imdb.com/title/tt' + movie.imdbId + '/" title="' + movie.title + '" target="_blank">More info</a>' : '');
+};
+
+var addedMovie = function addedMovie(_ref2) {
+  var movie = _ref2.movie,
+      fullRender = _ref2.fullRender,
+      allowRating = _ref2.allowRating;
+  return MOVIEAPP.uihelpers.template(_templateObject2, movie.movieId, movie.movieId, fullRender ? '<span class="card-header" style="background-image: url(' + movie.poster + ')">' : '<span class="card-header" style="background-image: url(' + MOVIEAPP.siteConfig.config.UI.defaultMoviePosterURL + ')">', allowRating, movie.movieId, allowRating, [5, 4, 3, 2, 1].map(function (x) {
+    return '<input type="radio" name="user_movie_' + movie.movieId + '_rating" id="user_movie_' + movie.movieId + '_rating_r' + x + '" value="' + x + '" data-movieid="' + movie.movieId + '" onclick="event.stopPropagation();" ><label for="user_movie_' + movie.movieId + '_rating_r' + x + '"></label>';
+  }).join('\n      '), movie.title, fullRender ? '(' + movie.year + ')' : '', fullRender ? '<span> ' + movie.plot + '</span>' : 'Plot not available', fullRender ? 'Genres:' + movie.genres : '');
+};

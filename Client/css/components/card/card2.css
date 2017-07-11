@@ -1,0 +1,113 @@
+/* MOVIE POSTERS */
+.card2-container { 
+  margin:50px 0;
+  height:450px;
+  position:relative;
+    }
+.card2-container .card2 {
+  position:relative;
+   display:inline;
+   float:left;
+	-webkit-perspective: 400; 
+  perspective: 400; 
+  -webkit-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+	-webkit-transition-property: perspective;
+  transition-property: perspective;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+   }
+
+.card2-container .card2:hover {
+   -webkit-perspective: 5000; 
+   perspective: 5000; 
+   }
+	
+.card2-container .card2 img { 
+  border:10px solid #fcfafa;
+  -webkit-transform: rotateY(30deg);
+  transform: rotateY(30deg);
+	-moz-box-shadow:0 3px 10px #888;
+  box-shadow:0 3px 10px #888;
+  -webkit-box-shadow:0 3px 10px #888;
+	-webkit-transition-property: transform; 
+  transition-property: transform; 
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+   }
+.card2-container .card2:hover img { 
+  -webkit-transform: rotateY(0deg); 
+  transform: rotateY(0deg); 
+  }
+
+.movieinfo { 
+border:10px solid #fcfafa;
+ padding:10px;
+ width:200px;
+ max-height:280px;
+ background-color:#deddcd;
+ margin:-195px 0 0 55px;
+ position:absolute;
+ -moz-box-shadow:0 20px 40px #888;
+box-shadow:0 20px 40px #888;
+ -webkit-box-shadow:0 20px 40px #888;
+-webkit-transform: translateZ(30px) rotateY(30deg);
+transform: translateZ(30px) rotateY(30deg);
+-webkit-transition-property: transform, box-shadow, margin;
+transition-property: transform, box-shadow, margin;
+-webkit-transition-duration: 0.5s;
+transition-duration: 0.5s; 
+ }
+	
+.card2-container .card2:hover .movieinfo { 
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+   -webkit-box-shadow:0 5px 10px #888; margin:-175px 0 0 30px; 
+   box-shadow:0 5px 10px #888; margin:-175px 0 0 30px; 
+}
+	
+.movieinfo h3 { 
+  color:#7a3f3a;
+  font-variant: small-caps;
+  text-align:center;
+  padding-bottom:5px; 
+  -webkit-margin-before: 1em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+  
+.movieinfo p {
+   padding-bottom:10px;
+   font-size:0.9em;
+  -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    }
+
+.movieinfo a { 
+background-color:#7a3f3a;
+padding:5px 10px; color:#eee;
+  text-decoration:none;
+   display:block; width:80px;
+    text-align:center;
+     margin:0 auto;
+	-moz-border-radius:5px;
+  border-radius:5px;
+   -webkit-border-radius:5px;
+    }
+.movieinfo a:hover, .movieinfo a:focus { 
+  background-color:#6a191f;
+  color:#fff;
+   }
+
+.close2 {
+  position:absolute!important;
+  float: none!important;
+  clear:both!important;
+  background-color: transparent!important;
+  width: 32px!important;
+  height: 32px;
+  opacity: 0.4;
+}

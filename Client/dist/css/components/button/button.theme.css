@@ -1,0 +1,29 @@
+ .btnPrimary{
+  color: #fff;
+  background: transparent;
+  border: 2px solid #2376ae;
+  text-shadow:0px 1px 0px #2f6627;
+  max-width:120px;
+}
+
+.btnPrimary:hover:enabled {
+  color: #FFD700;
+  text-shadow: 0px 0px 10px rgba(255,255,255,0.6), 0px 0px 30px rgba(255,255,255,0.4), 0px 0px 50px rgba(255,255,255,0.3), 0px 0px 180px rgba(255,255,255,0.3);
+	border-left: 2px solid #add356;
+  border-right: 2px solid #00dfa6;
+}
+
+ .btnSettings{
+  color: #fff;
+  background: transparent;
+  border: 2px solid #2376ae;
+  text-shadow:0px 1px 0px #237dee;
+  max-width:120px;
+}
+
+.btnSettings:hover:enabled {
+  color: #fff;
+   border: 3px solid #2376ae;
+   text-shadow:0px 2px 0px #2376ae;
+	
+}

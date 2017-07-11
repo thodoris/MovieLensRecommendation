@@ -1,0 +1,22 @@
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+}
+
+.popup {
+  opacity:0.9;
+background-color: #e7a61a;
+  color: #fff;
+ font-size: 12px;
+-webkit-box-shadow: 2px -2px 34px 5px rgba(255,255,255,0.77);
+-moz-box-shadow: 2px -2px 34px 5px rgba(255,255,255,0.77);
+box-shadow: 2px -2px 34px 5px rgba(255,255,255,0.77);
+}
+
+.popup h2 {
+  color: #333;
+}
+
+.popup p {
+    font-size: 12px;
+}

@@ -1,0 +1,77 @@
+/* .slideCheck */
+.slideCheck {
+  width: 80px;
+  height: 26px;
+  margin: 20px auto;
+  position: relative;
+
+}
+.slideCheck:after {
+  content: 'OFF';
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+ 
+}
+.slideCheck:before {
+  content: 'ON';
+  position: absolute;
+  left: 10px;
+  z-index: 0;
+}
+.slideCheck label {
+  display: block;
+  width: 34px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  z-index: 1;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.slideCheck input[type=checkbox] {
+  visibility: hidden;
+}
+.slideCheck input[type=checkbox]:checked + label {
+  left: 43px;
+}
+
+/* end .slideCheck */
+
+/* .roundedCheck */
+.roundedCheck {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px auto;
+}
+.roundedCheck label {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+}
+.roundedCheck label:after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  opacity: 0;
+}
+.roundedCheck label:hover::after {
+  opacity: 0.3;
+}
+.roundedCheck input[type=checkbox] {
+  visibility: hidden;
+}
+.roundedCheck input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+/* end .roundedCheck */

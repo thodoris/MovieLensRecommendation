@@ -1,0 +1,1 @@
+browser-sync start --server --files "**/*.htm" "**/*.js" "**/*.css" "**/*.html" --browser "chrome"

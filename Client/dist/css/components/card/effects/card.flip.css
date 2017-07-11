@@ -1,0 +1,37 @@
+.card-container {
+display: block;
+margin: 0 auto;
+perspective: 900px;
+
+}
+
+
+.card {
+transition: all 0.6s ease;
+transform-style: preserve-3d;
+height:inherit;
+width:inherit;
+}
+
+.front, .back {
+display:block;
+position: absolute;
+top: 0;
+left: 0;
+border-radius: 5px;
+color: white;
+box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+backface-visibility: hidden;
+}
+
+.back {
+background: #FEC606;
+ opacity: 0.75;
+}
+.card-container:hover .card {
+transform: rotateY(180deg);
+}
+.back {
+transform: rotateY(180deg);
+}
+

@@ -1,0 +1,120 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background:#000 url(../images/stars.png) repeat top center;
+  z-index:0;
+  padding: 10px;
+}
+
+.twinkling{
+top:300px;
+position:absolute;
+width:100%;
+height:100%;
+display:block;
+background:transparent url(../images/twinkling.png) repeat top center;
+z-index:1;
+-moz-animation:move-twink-back 200s linear infinite;
+-ms-animation:move-twink-back 200s linear infinite;
+-o-animation:move-twink-back 200s linear infinite;
+-webkit-animation:move-twink-back 200s linear infinite;
+animation:move-twink-back 200s linear infinite;
+}
+.clouds{
+position:absolute;
+width:100%;
+height:100%;
+display:block;
+background:transparent url(../images/clouds.png) repeat top center;
+z-index:3;
+-moz-animation:move-clouds-back 200s linear infinite;
+-ms-animation:move-clouds-back 200s linear infinite;
+-o-animation:move-clouds-back 200s linear infinite;
+-webkit-animation:move-clouds-back 200s linear infinite;
+animation:move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+from {background-position:0 0;}
+to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+from {background-position:0 0;}
+to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+from {background-position:0 0;}
+to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+from {background-position:0 0;}
+to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+from {background-position:0 0;}
+to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+from {background-position:0 0;}
+to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+from {background-position:0 0;}
+to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+from {background-position: 0;}
+to {background-position:10000px 0;}
+}
+
+header, footer {
+  border-radius: 7px;
+  margin: 10px;
+  border-left:3px dotted #e5e5e5;
+  border-right:3px dotted #e5e5e5;
+  border-top: 5px dotted #e5e5e5;
+	border-bottom: 5px dotted #e5e5e5;
+	box-shadow: inset 0 -1px 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5, 0 1px 0 0 #e5e5e5, 0 -1px 0 0 #e5e5e5;
+
+}
+
+
+#movies-datalist , #search-input{
+background: transparent; 
+z-index:4!important;
+color:#fff;
+}
+
+
+.table-title {
+  display: flex;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  color:#D5DDE5;;
+  border-color: #5a6673;
+  /*border-bottom:1px solid #9ea7af;*/
+  /*border-right: 1px  dashed #343a45;*/
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+  background:transparent url(../images/clouds.png) repeat top center;
+  z-index:3;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+#containerGrid , #myMovies , #myRecommendations ,caption-title , div.loader , .card , .card2 , .col{
+  z-index: 99;
+}
